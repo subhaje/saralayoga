@@ -1,0 +1,220 @@
+/**
+ * Sarala Yoga Website Styles
+ * Pure Tailwind CSS with Custom Components
+ * Author: Sarala Yoga
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================================
+   Base Typography Styles
+   =================================== */
+
+@layer base {
+  /* Set Quicksand as default body font */
+  body {
+    @apply font-body;
+  }
+
+  /* Set Playfair Display for all headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+/* ===================================
+   Custom Components (using @apply)
+   =================================== */
+
+/* Button Components */
+@layer components {
+.btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-600 text-white hover:bg-secondary-700 focus:ring-secondary-500;
+}
+
+.btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white focus:ring-primary-500;
+  }
+  
+  .btn-ghost {
+    @apply text-primary-600 hover:bg-primary-50 focus:ring-primary-500;
+  }
+}
+
+/* Card Components */
+@layer components {
+.card {
+    @apply bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden;
+}
+
+.card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .card-body {
+    @apply p-6;
+  }
+  
+  .card-header {
+    @apply px-6 py-4 border-b border-gray-200;
+  }
+  
+  .card-footer {
+    @apply px-6 py-4 border-t border-gray-200 bg-gray-50;
+  }
+}
+
+/* Navigation Components */
+@layer components {
+.nav-link {
+    @apply text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium;
+}
+
+  .nav-link-active {
+    @apply text-primary-600 font-semibold;
+}
+
+  .mobile-menu-button {
+    @apply md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500;
+}
+
+.desktop-nav {
+    @apply hidden md:flex items-center space-x-8;
+  }
+}
+
+/* Form Components */
+@layer components {
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200;
+  }
+  
+.form-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+  }
+  
+  .form-error {
+    @apply text-red-600 text-sm mt-1;
+  }
+  
+  .form-group {
+    @apply mb-6;
+  }
+}
+
+/* Layout Components */
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-sm {
+    @apply py-8 md:py-16;
+  }
+  
+  .section-lg {
+    @apply py-20 md:py-32;
+  }
+}
+
+/* Typography Components */
+@layer components {
+  .heading-1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 font-heading;
+  }
+  
+  .heading-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 font-heading;
+  }
+  
+  .heading-3 {
+    @apply text-2xl md:text-3xl font-semibold text-gray-900 font-heading;
+  }
+  
+  .heading-4 {
+    @apply text-xl md:text-2xl font-semibold text-gray-900 font-heading;
+  }
+  
+  .text-lead {
+    @apply text-lg md:text-xl text-gray-600 font-body;
+  }
+  
+  .text-muted {
+    @apply text-gray-500;
+  }
+}
+
+/* Gallery Components */
+@layer components {
+  .gallery-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.gallery-item {
+    @apply relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+  
+  .gallery-item img {
+    @apply w-full h-64 object-cover transition-transform duration-300 hover:scale-105;
+}
+
+.gallery-overlay {
+    @apply absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300;
+  }
+}
+
+/* Animation Components */
+@layer components {
+.fade-in {
+    @apply opacity-0 translate-y-4 transition-all duration-500 ease-out;
+  }
+  
+  .fade-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .slide-up {
+    @apply transform translate-y-8 opacity-0 transition-all duration-500 ease-out;
+  }
+  
+  .slide-up.visible {
+    @apply translate-y-0 opacity-100;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scroll-smooth {
+  scroll-behavior: smooth;
+  }
+  
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  }
+  
+  .bg-gradient-secondary {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  }
+  
+  .bg-gradient-accent {
+    background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+  }
+}
