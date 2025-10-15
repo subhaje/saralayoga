@@ -1,0 +1,55 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.saralayoga.in/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow specific directories
+Allow: /src/
+Allow: /public/
+Allow: /assets/
+
+# Block unnecessary files
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /dist/
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.md$
+
+# Allow important pages
+Allow: /about.html
+Allow: /services.html
+Allow: /pricing.html
+Allow: /gallery.html
+Allow: /contact.html
+Allow: /blog.html
+Allow: /privacy.html
+Allow: /terms.html
+
+# Block admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow search engines to index images
+Allow: /src/assets/images/
+Allow: /public/images/
+
+# Allow CSS and JS for proper rendering
+Allow: /src/css/
+Allow: /src/js/
+
+# Block duplicate content
+Disallow: /*?*
+Disallow: /*#
+
+# Allow specific query parameters that are useful for SEO
+Allow: /*?utm_*
+Allow: /*?ref=*
+Allow: /*?source=*
